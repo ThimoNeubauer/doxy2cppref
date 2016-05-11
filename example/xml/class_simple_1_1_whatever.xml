@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_simple_1_1_whatever" kind="class" language="C++" prot="public">
+    <compoundname>Simple::Whatever</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_simple_1_1_whatever_1a2a2c2485fd3496a37e8fa596b04149d3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Simple::Whatever::member</definition>
+        <argsstring></argsstring>
+        <name>member</name>
+        <briefdescription>
+<para>member documentation </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple.h" line="21" column="1" bodyfile="simple.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_simple_1_1_whatever_1a9a6f23ce473c3ab4b521e49f162fef59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Simple::Whatever::Whatever</definition>
+        <argsstring>()</argsstring>
+        <name>Whatever</name>
+        <briefdescription>
+<para>the trivial constructor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple.h" line="8" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_simple_1_1_whatever_1a3a7cbd3eebf1278ecc91a5ff49391ba8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Simple::Whatever::Whatever</definition>
+        <argsstring>(float f)</argsstring>
+        <name>Whatever</name>
+        <param>
+          <type>float</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+<para>different constructor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple.h" line="11" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_simple_1_1_whatever_1a1105d62f784bc2851788f588c7c452bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Simple::Whatever::visible</definition>
+        <argsstring>(std::string s)</argsstring>
+        <name>visible</name>
+        <param>
+          <type>std::string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>visible method </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple.h" line="14" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_simple_1_1_whatever_1a75c9988da9fdbb908da5a66f348bb370" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Simple::Whatever::hidden</definition>
+        <argsstring>() const </argsstring>
+        <name>hidden</name>
+        <briefdescription>
+<para>a hidden private method </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="simple.h" line="18" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="simple.h" line="5" column="1" bodyfile="simple.h" bodystart="5" bodyend="22"/>
+    <listofallmembers>
+      <member refid="class_simple_1_1_whatever_1a75c9988da9fdbb908da5a66f348bb370" prot="private" virt="non-virtual"><scope>Simple::Whatever</scope><name>hidden</name></member>
+      <member refid="class_simple_1_1_whatever_1a2a2c2485fd3496a37e8fa596b04149d3" prot="private" virt="non-virtual"><scope>Simple::Whatever</scope><name>member</name></member>
+      <member refid="class_simple_1_1_whatever_1a1105d62f784bc2851788f588c7c452bd" prot="public" virt="non-virtual"><scope>Simple::Whatever</scope><name>visible</name></member>
+      <member refid="class_simple_1_1_whatever_1a9a6f23ce473c3ab4b521e49f162fef59" prot="public" virt="non-virtual"><scope>Simple::Whatever</scope><name>Whatever</name></member>
+      <member refid="class_simple_1_1_whatever_1a3a7cbd3eebf1278ecc91a5ff49391ba8" prot="public" virt="non-virtual"><scope>Simple::Whatever</scope><name>Whatever</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
