@@ -3,18 +3,31 @@
 
 import logging
 
-from doxy2cppref.classdata import ClassData
+from doxy2cppref.doxyxml import DoxyIndex
+
+
+logger = logging.getLogger("doxy2cppref")
+
+
+def render_page(title, docthings):
+
+    print("{{cpp/title|%s}}" % title)
+
+    print("===Member functions===")
+    print("{{dsc begin}}")
+
+    for doc in [doc for doc in docthings if doc.kind == "function"]:
+        print(doc.what)
+
+    print("{{dsc end}}")
 
 
 def main():
-    cd = ClassData('example/xml/class_simple_1_1_whatever.xml')
+    index = DoxyIndex('example/xml/index.xml')
+    for cls in index.classes():
+        class_details = index.class_details(cls)
 
-    for member in cd.methods():
-        print("-" * 20)
-        print(member.what)
-        print(member.kind)
-        print(member.brief)
-
+        render_page(class_details.name(), class_details.methods())
 
 try:
     main()
