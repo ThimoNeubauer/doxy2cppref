@@ -29,7 +29,7 @@ def render_class(class_details, outdir):
         overview_file.write("{{dsc begin}}\n")
 
         for member in members:
-            overview_file.write("{{dsc mem fun | missing | %s}}\n" % member.brief)
+            overview_file.write("{{dsc mem fun | %s | %s}}\n" % (member.what, member.brief))
 
         overview_file.write("{{dsc end}}\n\n")
 
