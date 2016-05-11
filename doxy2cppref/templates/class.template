@@ -1,0 +1,13 @@
+{{ '{{' }}cpp/title|{{ title }}{{ '}}' }}
+
+
+{% if public_members | length > 0 %}
+=== Member functions ===
+
+{{ '{{' }}dsc begin{{ '}}' }}
+{% for member in public_members %}
+{{ '{{' }}dsc mem fun | {{ member.what }} | {{ member.brief }} {{ '}}' }}
+{% endfor %}
+{{ '{{' }}dsc end{{ '}}' }}
+
+{% endif %}

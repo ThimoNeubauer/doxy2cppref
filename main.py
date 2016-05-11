@@ -6,7 +6,7 @@ import logging
 import os
 
 from doxy2cppref.doxyxml import DoxyIndex
-
+from doxy2cppref.output import output
 
 logger = logging.getLogger("doxy2cppref")
 
@@ -19,21 +19,13 @@ def render_class(class_details, outdir):
     cppname = class_details.cppname
 
     filename = os.path.join(outdir, cppname)
-    logger.info("Writing {}".format(filename))
-    overview_file = open(filename, "w", encoding="utf-8")
-    overview_file.write("{{cpp/title|%s}}\n\n" % cppname)
+    logging.info("Generating class file {}".format(filename))
 
-    members = class_details.public_members()
-    if len(members) > 0:
-        overview_file.write("=== Member functions ===\n\n")
-        overview_file.write("{{dsc begin}}\n")
+    d = dict()
+    d['title'] = cppname
+    d['public_members'] = class_details.public_members()
 
-        for member in members:
-            overview_file.write("{{dsc mem fun | %s | %s}}\n" % (member.what, member.brief))
-
-        overview_file.write("{{dsc end}}\n\n")
-
-    overview_file.close()
+    output(d, "class", filename)
 
 
 def main():
@@ -70,6 +62,7 @@ def main():
     for cls in index.classes():
         class_details = index.class_details(cls)
         render_class(class_details, outdir)
+
 
 try:
     main()
