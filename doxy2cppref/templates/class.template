@@ -1,12 +1,12 @@
-{{ '{{' }}cpp/title|{{ title }}{{ '}}' }}
+{{ '{{' }}cpp/title|{{ data.short_name }}{{ '}}' }}
 
 
-{% if public_members | length > 0 %}
+{% if data.public_methods() | length > 0 %}
 === Member functions ===
 
 {{ '{{' }}dsc begin{{ '}}' }}
-{% for member in public_members %}
-{{ '{{' }}dsc mem fun | {{ member.what }} | {{ member.brief }} {{ '}}' }}
+{% for member in data.public_methods() %}
+{{ '{{' }}dsc mem fun | {{ member.short_name }} | {{ member.brief_doc }} {{ '}}' }}
 {% endfor %}
 {{ '{{' }}dsc end{{ '}}' }}
 

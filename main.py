@@ -5,6 +5,7 @@ import argparse
 import logging
 import os
 
+from doxy2cppref.cppobjects import CppClass
 from doxy2cppref.doxyxml import DoxyIndex
 from doxy2cppref.output import output
 
@@ -15,17 +16,11 @@ class MyError(Exception):
     pass
 
 
-def render_class(class_details, outdir):
-    cppname = class_details.cppname
-
-    filename = os.path.join(outdir, cppname)
+def render_class(class_details: CppClass, outdir: str):
+    filename = os.path.join(outdir, class_details.short_name)
     logging.info("Generating class file {}".format(filename))
 
-    d = dict()
-    d['title'] = cppname
-    d['public_members'] = class_details.public_members()
-
-    output(d, "class", filename)
+    output(class_details, "class", filename)
 
 
 def main():
@@ -60,8 +55,7 @@ def main():
 
     index = DoxyIndex(indexfile)
     for cls in index.classes():
-        class_details = index.class_details(cls)
-        render_class(class_details, outdir)
+        render_class(cls, outdir)
 
 
 try:

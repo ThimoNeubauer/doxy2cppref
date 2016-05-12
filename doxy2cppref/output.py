@@ -16,4 +16,4 @@ def output(data, templatename, outname):
 
     with open(outname, "w", encoding="utf-8") as outfile:
         template = env.get_template(templatename + ".template")
-        outfile.write(template.render(**data))
+        outfile.write(template.render(data=data))
