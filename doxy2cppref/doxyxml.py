@@ -23,7 +23,7 @@ class DoxyIndex:
             refid = node.attrib['refid']
             filename = os.path.join(self.basedir, refid + ".xml")
 
-            doxyclass = DoxyClass(cppname, filename)
+            doxyclass = DoxyClass(filename)
             result.append(doxyclass)
 
         return result
@@ -34,18 +34,30 @@ def doxy2wiki(description):
     return " ".join(description.itertext()).strip()
 
 
+# TODO add unit test
+def cpp_basename(name: str):
+    """
+    Remove all namespaces from name
+    :param name:
+    :return:
+    """
+
+    return name[name.rfind('::')+2:]
+
+
 class DoxyClass(CppClass):
 
-    def __init__(self, cppname, filename: str):
+    def __init__(self, filename: str):
         super(DoxyClass, self).__init__()
 
-        self.short_name = cppname
-
         tree = ElementTree.parse(filename)
-        self.root = tree.getroot()
+        self.root = tree.getroot().find('.//compounddef')
 
-    def name(self):
-        return self.root.find('.//compoundname').text
+        self.full_name = self.root.find('compoundname').text
+        self.short_name = cpp_basename(self.full_name)
+
+        self.brief_doc = doxy2wiki(self.root.find('briefdescription'))
+        self.detailed_doc = doxy2wiki(self.root.find('detaileddescription'))
 
     def variables(self):
         return self.__memberdefs("[@kind='variable']")

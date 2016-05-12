@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="class_simple_1_1_whatever" kind="class"><name>Simple::Whatever</name>
+    <member refid="class_simple_1_1_whatever_1abce1dc1f1c9abb23a8075d4553faacdb" kind="typedef"><name>int</name></member>
+    <member refid="class_simple_1_1_whatever_1aa52871207b26a1ff6b00e94c45973fab" kind="variable"><name>member</name></member>
+    <member refid="class_simple_1_1_whatever_1a3440326b57762966a6115519b96d5664" kind="function"><name>Whatever</name></member>
+    <member refid="class_simple_1_1_whatever_1ae67f8353645106fc7b5c2d9d7513d6e4" kind="function"><name>Whatever</name></member>
+    <member refid="class_simple_1_1_whatever_1aa2bfa90b38bbc8ad7d77447f013ad011" kind="function"><name>visible</name></member>
+    <member refid="class_simple_1_1_whatever_1a834e0cecbdeb77b81d3bf88a031a2891" kind="function"><name>hidden</name></member>
+  </compound>
+  <compound refid="namespace_simple" kind="namespace"><name>Simple</name>
+  </compound>
+  <compound refid="simple_8h" kind="file"><name>simple.h</name>
+  </compound>
+</doxygenindex>
